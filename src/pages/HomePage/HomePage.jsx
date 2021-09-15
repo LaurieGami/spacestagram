@@ -4,12 +4,15 @@ import { useState, useEffect } from 'react';
 
 import axios from 'axios';
 
+import Card from '../../components/Card/Card';
+
 const API_URL = "https://api.nasa.gov/planetary/apod";
 const API_KEY = process.env.REACT_APP_APOD_API_KEY;
 
 function HomePage() {
     const [loading, setLoading] = useState(true);
     const [media, setMedia] = useState('');
+    const [error, setError] = useState('');
 
     const getMedia = () => {
         axios.get(`${API_URL}?api_key=${API_KEY}`)
@@ -20,7 +23,8 @@ function HomePage() {
         })
         .catch(err => {
             console.log(err);
-            setMedia('Error');
+            setError('An error happened while trying to load the files');
+            setLoading(false);
         })
     };
 
@@ -29,11 +33,15 @@ function HomePage() {
     }, [loading]);
 
     return (
-        <main>
+        <main className="homepage">
             <h1>Home Page</h1>
-            <article className="homepage">
-                
-            </article>
+            {!!error && <div>{error}</div>}
+            <section >
+                {loading && <div>Loading...</div>}
+                {!loading && media && 
+                    <Card media={media} />
+                }
+            </section>
         </main>
     )
 }

@@ -1,0 +1,27 @@
+@use '../partials/variables' as *;
+
+// MEDIA QUERIES
+//Breakpoint for tablet size
+@mixin tablet {
+    @media screen and (min-width: 768px){
+        @content;
+    }
+}
+
+// Breakpoint for desktop size
+@mixin desktop {
+    @media screen and (min-width: 1280px){
+        @content;
+    }
+}
+
+@mixin title {
+    margin: 0 0 $margin 0;
+    font-size: 18px;
+}
+
+@mixin date {
+    margin: 0;
+    font-weight: normal;
+    font-size: 15px;
+}
