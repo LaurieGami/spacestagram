@@ -6,6 +6,7 @@
     flex-direction: column;
     width: 100%;
     background-color: pink;
+    padding-bottom: $padding*2;
 
     @include tablet {
         width: 614px;
@@ -30,6 +31,67 @@
 
         &-container {
             display: flex;
+        }
+    }
+
+    &__btn {
+        border-style: none;
+        background-color: transparent;
+        padding: $padding;
+
+        &-container {
+            display: flex;
+            padding: 0 $padding*2;
+            margin-top: $margin*0.5;
+        }
+    }
+
+    &__description {
+        margin: $margin*0.5 0 0;
+        padding: 0 $padding*2;
+        font-size: 14px;
+    }
+}
+
+.heart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+
+    &__path-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__outline  {
+        fill: transparent;
+        stroke: #a00;
+        stroke-width: 8;
+
+        &.on {
+            transform: scale(1.75);
+            opacity:0;
+            stroke: #c00;
+            transform-origin: 50% 50%;
+            transition: transform, stroke, opacity;
+            transition-duration: .6s, .01s, .4s;
+            transition-delay: 0s, 0s, .2s;
+        }
+    }
+
+    &__full {
+        fill: none;
+        stroke: transparent;
+        transform-origin: 50% 50%;
+        stroke-width: 8px;
+        transform: scale(1);
+        transition:none;
+
+        &.on {
+            fill: #a00;
+            stroke: #a00;
         }
     }
 }

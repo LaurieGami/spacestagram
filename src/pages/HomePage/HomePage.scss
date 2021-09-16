@@ -1,6 +1,10 @@
+@use '../../styles/partials/variables' as *;
+
 .homepage {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    // padding: $padding*2 0;
 }

@@ -5,6 +5,8 @@ import { useState } from 'react';
 function Card({media}) {
     const [like, setLike] = useState(false);
 
+    const liked = like ? "on" : "";
+
     return (
         <article className="card">
             <div className="card__header">
@@ -14,15 +16,19 @@ function Card({media}) {
             <div className="card__img-container">
                 <img className="card__img" src={media.url} alt={media.title}/>
             </div>
-            <button className="card__btn" onClick={() => setLike(!like)}>
-                {!like
-                    ?   <svg className="heart-main" viewBox="0 0 512 512" width="100" title="heart">
-                            <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+            <div className="card__footer">
+                <div className="card__btn-container">
+                    <button className="card__btn" onClick={() => setLike(!like)}>
+                        <svg className="heart" viewBox="0 0 100 100" height="24px" width="24px">
+                            <g className="heart__path-container">
+                                <path className={`heart__full ${liked}`} d="M 90,40 a 20 20 0 1 0 -40,-25 a 20 20 0 1 0 -40,25 l 40,50  z" />
+                                <path className={`heart__outline ${liked}`}  d="M 90,40 a 20 20 0 1 0 -40,-25 a 20 20 0 1 0 -40,25 l 40,50  z" />
+                            </g>
                         </svg>
-                    : <div>Unlike</div>
-                }
-            </button>
-            <p className="card__description">{media.explanation}</p>
+                    </button>
+                </div>
+                <p className="card__description">{media.explanation}</p>
+            </div>
         </article>
     )
 }

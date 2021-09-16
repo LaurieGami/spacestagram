@@ -34,9 +34,8 @@ function HomePage() {
 
     return (
         <main className="homepage">
-            <h1>Home Page</h1>
             {!!error && <div>{error}</div>}
-            <section >
+            <section>
                 {loading && <div>Loading...</div>}
                 {!loading && media && 
                     <Card media={media} />
