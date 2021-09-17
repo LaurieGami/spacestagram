@@ -1,10 +1,15 @@
 @use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
 
 .homepage {
     display: flex;
     flex-direction: column;
-    // justify-content: center;
     align-items: center;
     min-height: 100vh;
-    // padding: $padding*2 0;
+    padding: $padding*3 0;
+    background-color: rgb(250,250,250);
+
+    @include tablet {
+        padding: $padding*4 0;
+    }
 }

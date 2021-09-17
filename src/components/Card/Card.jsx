@@ -13,9 +13,16 @@ function Card({media}) {
                 <h3 className="card__title">{media.title}</h3>
                 <h4 className="card__date">{media.date}</h4>
             </div>
-            <div className="card__img-container">
-                <img className="card__img" src={media.url} alt={media.title}/>
-            </div>
+            {media.media_type === "image" &&
+                <div className="card__img-container">
+                    <img className="card__img" src={media.url} alt={media.title}/>
+                </div>
+            }
+            {media.media_type === "video" &&
+                <div className="card__video-container">
+                    <iframe className="card__video" width="560" height="315" src={media.url} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                </div>
+            }
             <div className="card__footer">
                 <div className="card__btn-container">
                     <button className="card__btn" onClick={() => setLike(!like)}>

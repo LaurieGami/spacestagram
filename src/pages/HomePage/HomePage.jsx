@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import Card from '../../components/Card/Card';
+import Loader from '../../components/Loader/Loader';
 
 const API_URL = "https://api.nasa.gov/planetary/apod";
 const API_KEY = process.env.REACT_APP_APOD_API_KEY;
@@ -36,7 +37,9 @@ function HomePage() {
         <main className="homepage">
             {!!error && <div>{error}</div>}
             <section>
-                {loading && <div>Loading...</div>}
+                {loading && 
+                    <Loader />
+                }
                 {!loading && media && 
                     <Card media={media} />
                 }

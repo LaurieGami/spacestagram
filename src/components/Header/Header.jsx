@@ -2,8 +2,8 @@ import './Header.scss';
 
 function Header() {
     return (
-        <header>
-            <h2>Spacestagram</h2>
+        <header className="header">
+            <h2 className="header__logo">Spacestagram</h2>
         </header>
     )
 }

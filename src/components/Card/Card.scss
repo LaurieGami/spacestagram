@@ -5,11 +5,14 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: pink;
+    background-color: inherit;
     padding-bottom: $padding*2;
 
     @include tablet {
         width: 614px;
+        background-color: #FFF;
+        border-radius: 4px;
+        border: 1px solid rgb(219,219,219);
     }
 
     &__header {
@@ -31,6 +34,21 @@
 
         &-container {
             display: flex;
+        }
+    }
+
+    &__video {
+        left:0;
+        top:0;
+        height:100%;
+        width:100%;
+        position:absolute;
+        
+        &-container {
+            overflow:hidden;
+            padding-bottom:56.25%;
+            position:relative;
+            height:0;
         }
     }
 
