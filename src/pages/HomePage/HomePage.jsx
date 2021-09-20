@@ -18,12 +18,10 @@ function HomePage() {
     const getMedia = () => {
         axios.get(`${API_URL}?api_key=${API_KEY}`)
         .then(res => {
-            console.log(res);
             setMedia(res.data);
             setLoading(false);
         })
         .catch(err => {
-            console.log(err);
             setError('An error happened while trying to load the files');
             setLoading(false);
         })

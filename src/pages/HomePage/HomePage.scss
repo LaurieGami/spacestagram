@@ -1,5 +1,6 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/colors' as *;
 
 .homepage {
     display: flex;
@@ -7,7 +8,7 @@
     align-items: center;
     min-height: 100vh;
     padding: $padding*3 0;
-    background-color: rgb(250,250,250);
+    background-color: $light-grey;
 
     @include tablet {
         padding: $padding*4 0;

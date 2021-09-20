@@ -1,4 +1,5 @@
 @use '../partials/variables' as *;
+@use '../partials/colors' as *;
 
 // MEDIA QUERIES
 //Breakpoint for tablet size
@@ -24,4 +25,9 @@
     margin: 0;
     font-weight: normal;
     font-size: 15px;
+}
+
+@mixin link-reset {
+    text-decoration: none;
+    color: $black;
 }

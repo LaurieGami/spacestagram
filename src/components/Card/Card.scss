@@ -1,5 +1,6 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
+@use '../../styles/partials/colors' as *;
 
 .card {
     display: flex;
@@ -10,9 +11,9 @@
 
     @include tablet {
         width: 614px;
-        background-color: #FFF;
+        background-color: $white;
         border-radius: 4px;
-        border: 1px solid rgb(219,219,219);
+        border: 1px solid $border;
     }
 
     &__header {
@@ -81,12 +82,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: visible;
     }
 
     &__outline  {
         fill: transparent;
         stroke: #a00;
         stroke-width: 8;
+        transform: scale(1);
 
         &.on {
             transform: scale(1.75);

@@ -1,5 +1,6 @@
+@use '../../styles/partials/colors' as *;
+
 .loader {
-    color: black;
     display: inline-block;
     position: relative;
     width: 80px;
@@ -20,7 +21,7 @@
     width: 6px;
     height: 18px;
     border-radius: 20%;
-    background: black;
+    background: $black;
 }
 
 .loader div:nth-child(1) {

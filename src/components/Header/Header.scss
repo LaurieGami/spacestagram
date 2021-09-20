@@ -1,15 +1,21 @@
 @use '../../styles/partials/typography' as *;
 @use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/colors' as *;
 
 .header {
     display: flex;
     align-items: center;
     padding: 0 $padding*2;
     height: 54px;
-    border-bottom: 1px solid rgb(219,219,219);
+    border-bottom: 1px solid $border;
 
     &__logo {
         font-family: "Orbitron";
         margin: 0;
+    }
+
+    &__link {
+        @include link-reset;
     }
 }
